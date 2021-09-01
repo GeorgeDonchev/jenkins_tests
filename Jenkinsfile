@@ -3,42 +3,30 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Hello World"'
+                sh 'echo "Hello world"'
                 sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
+                    echo "Multiple shell steps works too"
                 '''
             }
         }
         stage('Test') {
             steps {
-                sh 'echo "Fail!"; exit 0'
+                sh 'echo "Testing..."'
+                sh 'ehoc "Still testing..."'
             }
         }
         stage('Deploy') {
             steps {
                 sh 'echo "Deploying..."'
-                }
             }
         }
-    }
     post {
         always {
-            echo 'This will always run'
+            echo 'This always run....'
         }
         success {
-            echo 'This will run only if successful'
-        }
-        failure {
-            echo 'This will run only if failed'
-        }
-        unstable {
-            echo 'This will run only if the run was marked as unstable'
-        }
-        changed {
-            echo 'This will run only if the state of the Pipeline has changed'
-            echo 'For example, if the Pipeline was previously failing but is now successful'
+            echo 'This alway run successful...'
         }
     }
+    }
 }
-
