@@ -20,6 +20,7 @@ pipeline {
                 sh 'echo "Deploying..."'
             }
         }
+    }
     post {
         always {
             echo 'This always run....'
@@ -27,6 +28,5 @@ pipeline {
         success {
             echo 'This alway run successful...'
         }
-    }
     }
 }
