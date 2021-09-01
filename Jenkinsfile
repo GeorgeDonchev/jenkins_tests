@@ -12,7 +12,6 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo "Testing..."'
-                sh 'ehoc "Still testing..."'
             }
         }
         stage('Deploy') {
