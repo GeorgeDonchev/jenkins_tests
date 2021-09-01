@@ -16,7 +16,7 @@ pipeline {
                 }
             }
         }
-    stage('Test') {
+        stage('Test') {
             steps {
                 sh 'echo "Fail!"; exit 1'
             }
