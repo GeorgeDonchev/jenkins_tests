@@ -10,16 +10,16 @@ pipeline {
                 '''
             }
         }
-        stage('Test') {
-            steps {
-                sh 'echo "Fail!"; exit 0'
-            }
         stage('Deploy') {
             steps {
                 sh 'echo "Deploying..."'
                 }
             }
         }
+        stage('Test') {
+            steps {
+                sh 'echo "Fail!"; exit 0'
+            }
     }
     post {
         always {
@@ -40,4 +40,3 @@ pipeline {
         }
     }
 }
-
