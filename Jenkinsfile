@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('Build') {
             agent {
@@ -10,6 +10,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            agent {
+                docker { image 'node:14-alpine' }
+            }
             when {
                 expression {
                     currentBuild.result == null || currentBuild.result == 'SUCCESS'
